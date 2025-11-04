@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Web Nest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+
+    <!-- Left Ad Space -->
+    <div class="ad-space ad-left">
+      <div class="ad-banner">
+        <div class="ad-placeholder">60x468 Ad</div>
+      </div>
+    </div>
+
+    <!-- Right Ad Space -->
+    <div class="ad-space ad-right">
+      <div class="ad-banner">
+        <div class="ad-placeholder">60x468 Ad</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="skull-icon">☠️</div>
+        </div>
+      </header>
+
+      <div class="cards-grid" id="cardsGrid">
+        <!-- Card 1 -->
+        <div class="card" data-category="games">
+          <div class="card-icon">🎮</div>
+          <h2>Games</h2>
+          <p>Discover amazing games and gaming resources</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" data-category="movies">
+          <div class="card-icon">🎬</div>
+          <h2>Movies/Shows</h2>
+          <p>Stream your favorite movies and TV shows</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" data-category="streaming">
+          <div class="card-icon">📺</div>
+          <h2>Streaming</h2>
+          <p>Live Sports & TV</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" data-category="software">
+          <div class="card-icon">💻</div>
+          <h2>Software</h2>
+          <p>Essential tools and applications</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" data-category="books">
+          <div class="card-icon">📚</div>
+          <h2>Books</h2>
+          <p>Digital library and e-books</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" data-category="music">
+          <div class="card-icon">🎵</div>
+          <h2>Music</h2>
+          <p>Stream and download music</p>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card" data-category="anime">
+          <div class="card-icon">⚔️</div>
+          <h2>Anime</h2>
+          <p>Watch and download anime</p>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card" data-category="utilities">
+          <div class="card-icon">🔧</div>
+          <h2>Utilities</h2>
+          <p>Helpful online tools</p>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card" data-category="learning">
+          <div class="card-icon">📖</div>
+          <h2>Learning</h2>
+          <p>Educational content and courses</p>
+        </div>
+      </div>
+
+      <!-- Links View Container -->
+      <div class="links-container" id="linksContainer" style="display: none">
+        <button class="back-button" id="backButton">← Back</button>
+        <div class="links-header">
+          <div class="links-icon" id="linksIcon"></div>
+          <h2 id="linksTitle"></h2>
+        </div>
+        <div class="links-grid" id="linksGrid"></div>
+      </div>
+    </div>
+
+    <script>
+      // Theme Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+
+      // Check for saved theme preference or default to 'light'
+      const currentTheme = localStorage.getItem("theme") || "light";
+      body.classList.add(currentTheme + "-mode");
+
+      themeToggle.addEventListener("click", () => {
+        if (body.classList.contains("light-mode")) {
+          body.classList.remove("light-mode");
+          body.classList.add("dark-mode");
+          localStorage.setItem("theme", "dark");
+        } else {
+          body.classList.remove("dark-mode");
+          body.classList.add("light-mode");
+          localStorage.setItem("theme", "light");
+        }
+      });
+
+      // Links Data
+      const linksData = {
+        games: {
+          icon: "🎮",
+          title: "Games",
+          links: [
+            {
+              name: "Fitgirl Repacks | Popular Repacks",
+              url: "https://fitgirl-repacks.site/",
+            },
+            { name: "GOGgames | Free GOG Games", url: "https://gog-games.to/" },
+            {
+              name: "Dodi Repacks | Repacks",
+              url: "https://dodi-repacks.download/",
+            },
+            {
+              name: "AnkerGames | Wide selection of Games",
+              url: "https://ankergames.net/",
+            },
+            {
+              name: "SteamGG | Free Preinstalled Steam Games",
+              url: "https://steamgg.net/",
+            },
+            {
+              name: "SteamRip | Free Preinstalled Steam Games",
+              url: "https://steamrip.com/",
+            },
+            {
+              name: "M4ckdoge Repacks | Repacks",
+              url: "https://m4ckd0ge-repacks.site/",
+            },
+            {
+              name: "Elamigos | Juegos Españoles",
+              url: "https://elamigos.site/",
+            },
+            {
+              name: "Online-Fix | Online for Cracked Games",
+              url: "https://online-fix.me/",
+            },
+            {
+              name: "CDRomance | Registration Required",
+              url: "https://retrogametalk.com/repository/",
+            },
+            { name: "Emuparadise", url: "https://www.emuparadise.me/" },
+            { name: "WeMod | Trainers App", url: "https://www.wemod.com/" },
+            {
+              name: "FearlessRevolution | Tables & Trainers",
+              url: "https://fearlessrevolution.com/",
+            },
+            {
+              name: "FLiNGTrainer | Seperate Trainers",
+              url: "https://flingtrainer.com/",
+            },
+          ],
+        },
+        movies: {
+          icon: "🎬",
+          title: "Movies/Shows",
+          links: [
+            { name: "Flixer | Most Popular NO ADS", url: "https://flixer.sh/" },
+            { name: "Cineby | Netflix UI", url: "https://www.cineby.gd/" },
+            { name: "BitCine | Netflix UI", url: "https://www.bitcine.app/" },
+            { name: "VeloraTV | Netflix UI", url: "https://veloratv.ru/" },
+            { name: "XPrime Tv | Netflix UI", url: "https://xprime.tv/" },
+            { name: "Fmovies | Movies & TV", url: "https://www.fmovies.gd/" },
+            {
+              name: "MKV Cinemas | Bollywood & Hollywood",
+              url: "https://mkvcinemas.kids/",
+            },
+            { name: "1337x | Torrents", url: "https://1337x.to/home/" },
+            {
+              name: "Docplus | Documentaries",
+              url: "https://www.docplus.com/",
+            },
+            {
+              name: "Documentary Area | Documentaries",
+              url: "https://www.documentaryarea.com/",
+            },
+            {
+              name: "PStream | Watch Tutorial for 4K",
+              url: "https://pstream.mov/",
+            },
+          ],
+        },
+        streaming: {
+          icon: "📺",
+          title: "Streaming",
+          links: [
+            {
+              name: "StreamEast | All Mirrors",
+              url: "https://gostreameast.link/",
+            },
+            {
+              name: "Sportsurge | Live Sports",
+              url: "https://v3.sportsurge.to/home39",
+            },
+            {
+              name: "WatchSports | 10 Sports",
+              url: "https://watchsports.to/",
+            },
+            { name: "Streamed | Live Sports", url: "https://streamed.pk/" },
+            { name: "TVPass | USA", url: "https://tvpass.org/" },
+            { name: "RiveLive", url: "https://rivestream.org/livesports" },
+            { name: "LiveHDTV", url: "https://www.livehdtv.com/" },
+            {
+              name: "EasyWebTV | All Countries",
+              url: "https://zhangboheng.github.io/Easy-Web-TV-M3u8/routes/countries.html",
+            },
+            {
+              name: "RGShows | International Live TV",
+              url: "https://www.rgshows.me/livetv/",
+            },
+          ],
+        },
+        software: {
+          icon: "💻",
+          title: "Software",
+          links: [
+            { name: "Appdoze | Latest Softwares", url: "https://appdoze.net/" },
+            { name: "Scloud | Windows Software", url: "https://scloud.ws/" },
+            {
+              name: "DownloadPirate | VFX + Much More",
+              url: "https://www.downloadpirate.com/",
+            },
+            {
+              name: "AeDownload | Premiere & After Effects Plugins",
+              url: "https://aedownload.com/",
+            },
+            {
+              name: "Audioz | Music Production Software",
+              url: "https://audioz.download/",
+            },
+            { name: "DAIKOV | Russian", url: "https://diakov.net/" },
+            {
+              name: "DownloadHa | Persian",
+              url: "https://www.downloadha.com/",
+            },
+          ],
+        },
+        books: {
+          icon: "📚",
+          title: "Books",
+          links: [
+            { name: "Z-Lib | E-books", url: "https://z-lib.gd/" },
+            { name: "RiveManga | Manga", url: "https://rivestream.org/manga" },
+            { name: "Libgen | E-books", url: "https://libgen.li/" },
+            {
+              name: "Anna's Archive | E-books & Reasearch papers",
+              url: "https://annas-archive.org/",
+            },
+            { name: "Liber3 | E-books", url: "https://liber3.eth.limo/" },
+            {
+              name: "Audiobookbay | Audiobooks",
+              url: "https://audiobookbay.lu/",
+            },
+            {
+              name: "Full Length Audiobooks | No Account Required",
+              url: "https://fulllengthaudiobooks.net/",
+            },
+            {
+              name: "Tokybook | Audiobooks Smaller Catalog",
+              url: "https://tokybook.com/",
+            },
+          ],
+        },
+        music: {
+          icon: "🎵",
+          title: "Music",
+          links: [
+            {
+              name: "Racoon | Multi Media Downloader",
+              url: "https://shailen.dedyn.io/racoon/",
+            },
+            { name: "AZMP3 | Youtube to MP3", url: "https://azmp3.cc/pro1/" },
+            { name: "Ezmp3 | Youtube to MP3", url: "https://ezconv.com/77hq" },
+            {
+              name: "Cobalt | YT, IG, Twitch etc... Downloader",
+              url: "https://cobalt.tools/",
+            },
+            {
+              name: "Lucida | HiFi Music Downloader",
+              url: "https://lucida.to/",
+            },
+            {
+              name: "DoubleDouble | Download HiFi Music",
+              url: "https://doubledouble.top/",
+            },
+            { name: "NCS | Non-Copyrighted Music", url: "https://ncs.io/" },
+            {
+              name: "Music School | Bandcamp to MP3",
+              url: "https://downloadmusicschool.com/bandcamp/",
+            },
+            { name: "CnvMP3 | Media Downloader", url: "https://cnvmp3.com/" },
+            {
+              name: "Megathread | Everything Music Related",
+              url: "https://github.com/MoonWalker440/Music-Megathread/",
+            },
+          ],
+        },
+        anime: {
+          icon: "⚔️",
+          title: "Anime",
+          links: [
+            { name: "AnimeKai | Hard-sub Anime", url: "https://animekai.to/" },
+            {
+              name: "XPrime TV | Anime, Movies & TV",
+              url: "https://xprime.tv/",
+            },
+            { name: "KickAssAnime | Anime", url: "https://kaa.mx/" },
+            { name: "HiAnime | Anime Dub & Sub", url: "https://hianimez.to/" },
+            { name: "AnimeNoSub | Anime", url: "https://animenosub.to/" },
+            {
+              name: "RiveStream | Anime, Movies & Live TV",
+              url: "https://rivestream.org/",
+            },
+          ],
+        },
+        utilities: {
+          icon: "🔧",
+          title: "Utilities",
+          links: [
+            { name: "Google Drive", url: "https://drive.google.com" },
+            { name: "Dropbox", url: "https://www.dropbox.com" },
+            { name: "Notion", url: "https://www.notion.so" },
+            { name: "Trello", url: "https://trello.com" },
+            { name: "Evernote", url: "https://evernote.com" },
+            { name: "1Password", url: "https://1password.com" },
+          ],
+        },
+        learning: {
+          icon: "📖",
+          title: "Learning",
+          links: [
+            { name: "Coursera", url: "https://www.coursera.org" },
+            { name: "Udemy", url: "https://www.udemy.com" },
+            { name: "Khan Academy", url: "https://www.khanacademy.org" },
+            { name: "edX", url: "https://www.edx.org" },
+            { name: "Codecademy", url: "https://www.codecademy.com" },
+            { name: "freeCodeCamp", url: "https://www.freecodecamp.org" },
+          ],
+        },
+      };
+
+      // Card Click Event
+      const cards = document.querySelectorAll(".card");
+      const cardsGrid = document.getElementById("cardsGrid");
+      const linksContainer = document.getElementById("linksContainer");
+      const backButton = document.getElementById("backButton");
+      const linksIcon = document.getElementById("linksIcon");
+      const linksTitle = document.getElementById("linksTitle");
+      const linksGrid = document.getElementById("linksGrid");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const category = card.getAttribute("data-category");
+          const data = linksData[category];
+
+          if (data) {
+            // Update links view
+            linksIcon.textContent = data.icon;
+            linksTitle.textContent = data.title;
+
+            // Clear and populate links
+            linksGrid.innerHTML = "";
+            data.links.forEach((link) => {
+              const linkCard = document.createElement("a");
+              linkCard.href = link.url;
+              linkCard.target = "_blank";
+              linkCard.className = "link-card";
+              linkCard.innerHTML = `
+                <div class="link-icon">🔗</div>
+                <h3>${link.name}</h3>
+              `;
+              linksGrid.appendChild(linkCard);
+            });
+
+            // Show links, hide cards
+            cardsGrid.style.display = "none";
+            linksContainer.style.display = "block";
+          }
+        });
+      });
+
+      // Back Button Event
+      backButton.addEventListener("click", () => {
+        cardsGrid.style.display = "grid";
+        linksContainer.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
