@@ -4,64 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Performance optimizations -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="preconnect" href="https://discontentcocoamatters.com" />
     <link rel="dns-prefetch" href="https://discontentcocoamatters.com" />
 
-    <!-- Primary Meta Tags -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☠️</text></svg>"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☠️</text></svg>"
+    />
+
     <title>
-      Pirates Treasure - Best Free Porn Sites, Games, Movies & Streaming
-      Directory 2025
+      Pirates Treasure - Best Free Games, Movies & Streaming Directory 2025
     </title>
     <meta
       name="title"
-      content="Pirates Treasure - Best Free Porn Sites, Games, Movies & Streaming Directory 2025"
+      content="Pirates Treasure - Best Free Games, Movies & Streaming Directory 2025"
     />
     <meta
       name="description"
-      content="Discover 1000+ curated resources: Top porn sites, free games, movie streaming, software, books & music. Updated daily with the best free and premium content sites."
+      content="Discover 1000+ curated resources: Top sites, free games, movie streaming, software, books & music. Updated daily with the best free and premium content sites."
     />
     <meta
       name="keywords"
-      content="best porn sites 2025, free porn tube sites, top adult sites, free games download, movie streaming sites, free software, pirate sites directory"
+      content="best sites 2025, top adult sites, free games download, movie streaming sites, free software, pirate sites directory"
     />
     <meta name="author" content="Pirates Treasure" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://piratestreasure.com/" />
     <meta
       property="og:title"
-      content="Pirates Treasure - Best Free Porn Sites & Content Directory 2025"
+      content="Pirates Treasure - Best Free Content Directory 2025"
     />
     <meta
       property="og:description"
-      content="Your ultimate directory for 1000+ top porn sites, free games, movies, streaming and more. Curated daily."
+      content="Your ultimate directory for 1000+ top sites, free games, movies, streaming and more. Curated daily."
     />
     <meta property="og:image" content="https://piratestreasure.com/logo.png" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://piratestreasure.com/" />
     <meta
       property="twitter:title"
-      content="Pirates Treasure - Best Free Porn Sites & Content Directory 2025"
+      content="Pirates Treasure - Best Free Content Directory 2025"
     />
     <meta
       property="twitter:description"
-      content="Your ultimate directory for 1000+ top porn sites, free games, movies, streaming and more. Curated daily."
+      content="Your ultimate directory for 1000+ top sites, free games, movies, streaming and more. Curated daily."
     />
     <meta
       property="twitter:image"
       content="https://piratestreasure.com/logo.png"
     />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://piratestreasure.com/" />
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -78,20 +95,18 @@
     </script>
 
     <link rel="stylesheet" href="style.css" />
-    <!-- Ad Script -->
+
     <script
       type="text/javascript"
       src="//discontentcocoamatters.com/a1/32/f1/a132f1c37fcdb5fbd32943a70cb55db9.js"
     ></script>
   </head>
   <body>
-    <!-- Theme Toggle Button -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
       <span class="sun-icon">☀️</span>
       <span class="moon-icon">🌙</span>
     </button>
 
-    <!-- Floating Deal Bar -->
     <div class="floating-deal-bar" id="floatingDealBar">
       <div class="deal-content">
         <span class="deal-icon">💎</span>
@@ -128,8 +143,23 @@
         </div>
       </header>
 
+      <div class="search-container" id="searchContainer" style="display: none">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="🔍 Search sites, categories, or keywords..."
+            autocomplete="off"
+          />
+          <button class="search-clear" id="searchClear" style="display: none">
+            ✕
+          </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
       <div class="cards-grid" id="cardsGrid">
-        <!-- Card 1 -->
         <div class="card" data-category="games">
           <span class="card-count-badge" id="count-games">0 sites</span>
           <div class="card-icon">🎮</div>
@@ -137,7 +167,6 @@
           <p>Discover amazing games and gaming resources</p>
         </div>
 
-        <!-- Card 2 -->
         <div class="card" data-category="movies">
           <span class="card-count-badge" id="count-movies">0 sites</span>
           <div class="card-icon">🎬</div>
@@ -145,7 +174,6 @@
           <p>Stream your favorite movies and TV shows</p>
         </div>
 
-        <!-- Card 3 -->
         <div class="card" data-category="software">
           <span class="card-count-badge" id="count-software">0 sites</span>
           <div class="card-icon">💻</div>
@@ -153,7 +181,6 @@
           <p>Essential tools and applications</p>
         </div>
 
-        <!-- Card 4 -->
         <div class="card" data-category="books">
           <span class="card-count-badge" id="count-books">0 sites</span>
           <div class="card-icon">📚</div>
@@ -161,7 +188,6 @@
           <p>Digital library, e-books & web novels</p>
         </div>
 
-        <!-- Card 5 -->
         <div class="card" data-category="music">
           <span class="card-count-badge" id="count-music">0 sites</span>
           <div class="card-icon">🎵</div>
@@ -169,7 +195,6 @@
           <p>Stream and download music</p>
         </div>
 
-        <!-- Card 6 -->
         <div class="card" data-category="anime">
           <span class="card-count-badge" id="count-anime">0 sites</span>
           <div class="card-icon">⚔️</div>
@@ -177,7 +202,6 @@
           <p>Watch and download anime</p>
         </div>
 
-        <!-- Card 7 -->
         <div class="card" data-category="art">
           <span class="card-count-badge" id="count-art">0 sites</span>
           <div class="card-icon">🎨</div>
@@ -185,7 +209,6 @@
           <p>Anime art & booru sites</p>
         </div>
 
-        <!-- Card 8 -->
         <div class="card" data-category="apps">
           <span class="card-count-badge" id="count-apps">0 sites</span>
           <div class="card-icon">📱</div>
@@ -193,7 +216,6 @@
           <p>Anime, manga & streaming apps</p>
         </div>
 
-        <!-- Card 9 -->
         <div class="card" data-category="utilities">
           <span class="card-count-badge" id="count-utilities">0 sites</span>
           <div class="card-icon">🔧</div>
@@ -201,7 +223,6 @@
           <p>Helpful online tools</p>
         </div>
 
-        <!-- Card 10 -->
         <div class="card" data-category="learning">
           <span class="card-count-badge" id="count-learning">0 sites</span>
           <div class="card-icon">📖</div>
@@ -209,7 +230,6 @@
           <p>Educational content and courses</p>
         </div>
 
-        <!-- Card 11 -->
         <div class="card" data-category="manhwa">
           <span class="card-count-badge" id="count-manhwa">0 sites</span>
           <div class="card-icon">📖</div>
@@ -218,13 +238,7 @@
         </div>
       </div>
 
-      <!-- Links View Container -->
       <div class="links-container" id="linksContainer" style="display: none">
-        <button class="back-button" id="backButton">
-          <span class="back-icon">◄</span>
-          <span class="back-text">Back to Categories</span>
-        </button>
-
         <div class="links-header">
           <div class="links-icon" id="linksIcon"></div>
           <h2 id="linksTitle"></h2>
@@ -2061,7 +2075,6 @@
       const cards = document.querySelectorAll(".card");
       const cardsGrid = document.getElementById("cardsGrid");
       const linksContainer = document.getElementById("linksContainer");
-      const backButton = document.getElementById("backButton");
       const linksIcon = document.getElementById("linksIcon");
       const linksTitle = document.getElementById("linksTitle");
       const siteCountBadge = document.getElementById("siteCountBadge");
@@ -2141,6 +2154,14 @@
                       '<span class="site-badge popular-badge">POPULAR</span>';
                   }
 
+                  // Add view count
+                  const viewCount = getViewCount(site.url);
+                  if (viewCount > 0) {
+                    badgesHTML += `<span class="site-badge view-badge">🔥 ${formatViewCount(
+                      viewCount
+                    )} views</span>`;
+                  }
+
                   // Add collapsed class to items after 20
                   const collapsedClass =
                     isCollapsible && index >= 20 ? " collapsed-item" : "";
@@ -2203,6 +2224,7 @@
           // Show links, hide cards
           cardsGrid.style.display = "none";
           linksContainer.style.display = "block";
+          searchContainer.style.display = "block";
           currentCategory = category;
 
           // Add lazy load animation to category cards
@@ -2244,7 +2266,30 @@
       function showHome() {
         cardsGrid.style.display = "grid";
         linksContainer.style.display = "none";
+        searchContainer.style.display = "none";
+        searchInput.value = "";
+        searchResults.innerHTML = "";
+        searchClear.style.display = "none";
         currentCategory = null;
+      }
+
+      // View Counter System (LocalStorage)
+      function getViewCount(url) {
+        const views = JSON.parse(localStorage.getItem("siteViews") || "{}");
+        return views[url] || 0;
+      }
+
+      function trackView(url) {
+        const views = JSON.parse(localStorage.getItem("siteViews") || "{}");
+        views[url] = (views[url] || 0) + 1;
+        localStorage.setItem("siteViews", JSON.stringify(views));
+      }
+
+      function formatViewCount(count) {
+        if (count >= 1000) {
+          return (count / 1000).toFixed(1) + "K";
+        }
+        return count.toString();
       }
 
       // Toggle list expand/collapse
@@ -2286,6 +2331,9 @@
           return false;
         }
 
+        // Track view count
+        trackView(url);
+
         const adUrl =
           "https://discontentcocoamatters.com/ng0xuthz?key=be3c8d271e4ef2f83423de963fb113b3";
 
@@ -2320,16 +2368,6 @@
           showCategory(category, data);
         }
       }
-
-      // Back Button Event
-      backButton.addEventListener("click", () => {
-        // Use browser history to go back
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          showHome();
-        }
-      });
 
       // Deal Bar Functionality
       const dealBar = document.getElementById("floatingDealBar");
@@ -2380,19 +2418,134 @@
           localStorage.setItem("dealBarState", "normal");
         }
       });
+
+      // Search Functionality
+      const searchContainer = document.getElementById("searchContainer");
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+      const searchClear = document.getElementById("searchClear");
+
+      // Search function
+      function performSearch(query) {
+        query = query.toLowerCase().trim();
+
+        if (query.length === 0) {
+          searchResults.innerHTML = "";
+          searchClear.style.display = "none";
+          return;
+        }
+
+        searchClear.style.display = "block";
+        let results = [];
+
+        // Search through current category
+        if (currentCategory && linksData[currentCategory]) {
+          const data = linksData[currentCategory];
+
+          if (data.categories) {
+            data.categories.forEach((cat) => {
+              cat.sites.forEach((site) => {
+                if (
+                  site.name.toLowerCase().includes(query) ||
+                  site.url.toLowerCase().includes(query) ||
+                  cat.title.toLowerCase().includes(query)
+                ) {
+                  results.push({
+                    name: site.name,
+                    url: site.url,
+                    category: cat.title,
+                    isNew: site.isNew,
+                    isPopular: site.isPopular,
+                  });
+                }
+              });
+            });
+          }
+        }
+
+        // Display results
+        if (results.length === 0) {
+          searchResults.innerHTML =
+            '<div class="search-no-results">No results found</div>';
+        } else {
+          searchResults.innerHTML = results
+            .slice(0, 50)
+            .map((result) => {
+              let badges = "";
+              if (result.isNew)
+                badges += '<span class="site-badge new-badge">NEW</span>';
+              if (result.isPopular)
+                badges +=
+                  '<span class="site-badge popular-badge">POPULAR</span>';
+
+              return `
+              <div class="search-result-item">
+                <a href="#" data-url="${result.url}" class="search-result-link">
+                  <div class="search-result-name">${result.name}</div>
+                  <div class="search-result-category">${result.category}</div>
+                </a>
+                ${badges}
+              </div>
+            `;
+            })
+            .join("");
+
+          // Add click handlers to search results
+          document.querySelectorAll(".search-result-link").forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const url = this.getAttribute("data-url");
+              openLinkWithAd(url);
+            });
+          });
+        }
+      }
+
+      // Search input event
+      searchInput.addEventListener("input", (e) => {
+        performSearch(e.target.value);
+      });
+
+      // Clear search
+      searchClear.addEventListener("click", () => {
+        searchInput.value = "";
+        searchResults.innerHTML = "";
+        searchClear.style.display = "none";
+        searchInput.focus();
+      });
+
+      // Keyboard shortcut: / to focus search
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement !== searchInput) {
+          e.preventDefault();
+          if (currentCategory) {
+            searchInput.focus();
+          }
+        }
+        // ESC to close search or go back
+        if (e.key === "Escape") {
+          if (searchInput.value) {
+            searchInput.value = "";
+            searchResults.innerHTML = "";
+            searchClear.style.display = "none";
+          } else if (currentCategory) {
+            showHome();
+          }
+        }
+      });
     </script>
 
-    <!-- SEO Footer -->
     <footer class="seo-footer">
       <div class="footer-keywords">
         <p>
-          <strong>Pirates Treasure</strong> - Your ultimate directory for free movie streaming, game downloads, anime watching, manhwa
-          reading, and software downloads. Find the best free adult content, HD
-          movies, PC games, mobile apps, ebooks, music streaming, and learning
-          resources. Updated daily with 1000+ curated sites including premium torrent sites, streaming platforms, and download portals.
-          Discover top rated adult sites, free game sites, movie streaming
-          services, anime platforms, manga readers, novel sites, software
-          repositories, and more.
+          <strong>Pirates Treasure</strong> - Your ultimate directory for movie
+          streaming, game downloads, anime watching, manhwa reading, and
+          software downloads. Find the best free adult content, HD movies, PC
+          games, mobile apps, ebooks, music streaming, and learning resources.
+          Updated daily with 1000+ curated sites including torrent sites,
+          streaming platforms, and download portals. Discover top rated adult
+          sites, free game sites, movie streaming services, anime platforms,
+          manga readers, novel sites, software repositories, and more.
         </p>
       </div>
 
@@ -2404,7 +2557,6 @@
       </div>
     </footer>
 
-    <!-- Bottom Ad Script -->
     <script
       type="text/javascript"
       src="//discontentcocoamatters.com/6a/52/1b/6a521b2b90c54bd294e1c243e44c5d67.js"
