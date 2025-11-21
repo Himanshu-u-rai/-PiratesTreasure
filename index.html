@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="preconnect" href="https://discontentcocoamatters.com" />
-    <link rel="dns-prefetch" href="https://discontentcocoamatters.com" />
+    <!-- Removed external ad preconnect/prefetch -->
 
     <link
       rel="icon"
@@ -2168,7 +2167,7 @@
               linkCard.className = "link-card";
               linkCard.onclick = function (e) {
                 e.preventDefault();
-                openLinkWithAd(link.url);
+                openLink(link.url);
                 return false;
               };
               linkCard.innerHTML = `
@@ -2198,7 +2197,7 @@
             link.addEventListener("click", function (e) {
               e.preventDefault();
               const url = this.getAttribute("data-url");
-              openLinkWithAd(url);
+              openLink(url);
               return false;
             });
           });
@@ -2280,24 +2279,11 @@
         }
       }
 
-      // Function to open link with ad
-      function openLinkWithAd(url) {
-        if (!url || url === "#" || url === "") {
-          return false;
-        }
-
-        // Track view count
+      // Open link in new tab (ad behavior removed)
+      function openLink(url) {
+        if (!url || url === "#" || url === "") return false;
         trackView(url);
-
-        const adUrl =
-          "https://discontentcocoamatters.com/ng0xuthz?key=be3c8d271e4ef2f83423de963fb113b3";
-
-        // Open the actual website FIRST (this one will work)
-        const siteTab = window.open(url, "_blank", "noopener,noreferrer");
-
-        // Then open the ad immediately after
-        const adTab = window.open(adUrl, "_blank", "noopener,noreferrer");
-
+        window.open(url, "_blank", "noopener,noreferrer");
         return false;
       }
 
@@ -2310,55 +2296,7 @@
         }
       }
 
-      // Deal Bar Functionality
-      const dealBar = document.getElementById("floatingDealBar");
-      const dealMinimize = document.getElementById("dealMinimize");
-      const dealClose = document.getElementById("dealClose");
-
-      // Check for saved preferences
-      const dealBarState = localStorage.getItem("dealBarState");
-      if (dealBarState === "hidden") {
-        dealBar.classList.add("hidden");
-      } else if (dealBarState === "minimized") {
-        dealBar.classList.add("minimized");
-        dealMinimize.innerHTML = "▲";
-        dealMinimize.title = "Expand";
-      }
-
-      // Minimize/Expand toggle
-      dealMinimize.addEventListener("click", () => {
-        dealBar.classList.toggle("minimized");
-        if (dealBar.classList.contains("minimized")) {
-          dealMinimize.innerHTML = "▲";
-          dealMinimize.title = "Expand";
-          localStorage.setItem("dealBarState", "minimized");
-        } else {
-          dealMinimize.innerHTML = "▼";
-          dealMinimize.title = "Minimize";
-          localStorage.setItem("dealBarState", "normal");
-        }
-      });
-
-      // Close button
-      dealClose.addEventListener("click", () => {
-        dealBar.classList.add("hidden");
-        localStorage.setItem("dealBarState", "hidden");
-      });
-
-      // Click on minimized bar to expand
-      dealBar.addEventListener("click", (e) => {
-        if (
-          dealBar.classList.contains("minimized") &&
-          !e.target.classList.contains("deal-minimize") &&
-          !e.target.classList.contains("deal-close") &&
-          !e.target.classList.contains("deal-button")
-        ) {
-          dealBar.classList.remove("minimized");
-          dealMinimize.innerHTML = "▼";
-          dealMinimize.title = "Minimize";
-          localStorage.setItem("dealBarState", "normal");
-        }
-      });
+      // Removed legacy deal bar functionality and event handlers (was opening ad tabs).
 
       // Search Functionality
       const searchContainer = document.getElementById("searchContainer");
@@ -2436,7 +2374,7 @@
             link.addEventListener("click", function (e) {
               e.preventDefault();
               const url = this.getAttribute("data-url");
-              openLinkWithAd(url);
+              openLink(url);
             });
           });
         }
@@ -2498,9 +2436,6 @@
       </div>
     </footer>
 
-    <script
-      type="text/javascript"
-      src="//discontentcocoamatters.com/6a/52/1b/6a521b2b90c54bd294e1c243e44c5d67.js"
-    ></script>
+    <!-- removed external ad script -->
   </body>
 </html>

@@ -1212,17 +1212,7 @@ body.dark-mode .loading-overlay {
     font-size: 0.5rem;
     padding: 1px 4px;
   }
-  .deal-text {
-    font-size: 0.65rem;
-    min-width: 120px;
-  }
-  .deal-button {
-    padding: 5px 10px;
-    font-size: 0.7rem;
-  }
-  .deal-icon {
-    font-size: 1rem;
-  }
+  /* removed legacy deal/pro-motion selectors */
 }
 .seo-footer {
   background: rgba(255, 255, 255, 0.03);
