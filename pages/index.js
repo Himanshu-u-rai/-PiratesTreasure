@@ -28,48 +28,9 @@ export default function Home({ categories }) {
       themeToggle.addEventListener("click", handleThemeToggle);
     }
 
-    // Deal bar handlers
-    const dealBar = document.getElementById("floatingDealBar");
-    const dealMinimize = document.getElementById("dealMinimize");
-    const dealClose = document.getElementById("dealClose");
-
-    const dealBarState = localStorage.getItem("dealBarState");
-    if (dealBarState === "hidden" && dealBar) {
-      dealBar.classList.add("hidden");
-    } else if (dealBarState === "minimized" && dealBar) {
-      dealBar.classList.add("minimized");
-      if (dealMinimize) dealMinimize.innerHTML = "▲";
-    }
-
-    const handleMinimize = () => {
-      if (dealBar) {
-        dealBar.classList.toggle("minimized");
-        if (dealBar.classList.contains("minimized")) {
-          if (dealMinimize) dealMinimize.innerHTML = "▲";
-          localStorage.setItem("dealBarState", "minimized");
-        } else {
-          if (dealMinimize) dealMinimize.innerHTML = "▼";
-          localStorage.setItem("dealBarState", "normal");
-        }
-      }
-    };
-
-    const handleClose = () => {
-      if (dealBar) {
-        dealBar.classList.add("hidden");
-        localStorage.setItem("dealBarState", "hidden");
-      }
-    };
-
-    if (dealMinimize) dealMinimize.addEventListener("click", handleMinimize);
-    if (dealClose) dealClose.addEventListener("click", handleClose);
-
     return () => {
       if (themeToggle)
         themeToggle.removeEventListener("click", handleThemeToggle);
-      if (dealMinimize)
-        dealMinimize.removeEventListener("click", handleMinimize);
-      if (dealClose) dealClose.removeEventListener("click", handleClose);
     };
   }, []);
 
@@ -136,17 +97,13 @@ export default function Home({ categories }) {
       <div className="container">
         <header>
           <div className="logo">
-            <a
-              href="https://schemecontinuingwinning.com/ng0xuthz?key=be3c8d271e4ef2f83423de963fb113b3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/">
               <img
                 src="/logo.png"
                 alt="Pirates Treasure Logo"
                 className="logo-image"
               />
-            </a>
+            </Link>
           </div>
         </header>
 
@@ -185,29 +142,6 @@ export default function Home({ categories }) {
           </p>
         </div>
       </footer>
-
-      <div className="floating-deal-bar" id="floatingDealBar">
-        <div className="deal-content">
-          <span className="deal-icon">💎</span>
-          <span className="deal-text">
-            Premium HD Access - Exclusive 70% OFF Limited Offer
-          </span>
-          <a
-            href="https://schemecontinuingwinning.com/ng0xuthz?key=be3c8d271e4ef2f83423de963fb113b3"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="deal-button"
-          >
-            Claim Deal →
-          </a>
-        </div>
-        <button className="deal-minimize" id="dealMinimize" title="Minimize">
-          ▼
-        </button>
-        <button className="deal-close" id="dealClose" title="Close">
-          ×
-        </button>
-      </div>
     </>
   );
 }
